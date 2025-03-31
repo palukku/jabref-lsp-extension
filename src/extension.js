@@ -1,0 +1,29 @@
+
+const vscode = require('vscode');
+
+const { LanguageClient, TransportKind } = require('vscode-languageclient/node');
+
+function activate(context) {
+  const serverOptions = () => new Promise((resolve) => {
+    const socket = require('net').connect({ port: 12345 });
+    resolve({ reader: socket, writer: socket });
+  });
+
+  const clientOptions = {
+    documentSelector: [{ scheme: 'file', language: 'bibtex' }]
+  };
+
+  const client = new LanguageClient(
+    'bibtexLsp',
+    'Jabref LSP Client',
+    serverOptions,
+    clientOptions
+  );
+
+  client.setTrace('verbose');
+  context.subscriptions.push(client.start());
+}
+
+function deactivate() {}
+
+module.exports = { activate, deactivate };
