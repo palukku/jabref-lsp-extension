@@ -5,7 +5,7 @@ const { LanguageClient, TransportKind } = require('vscode-languageclient/node');
 
 function activate(context) {
   const serverOptions = () => new Promise((resolve) => {
-    const socket = require('net').connect({ port: 12345 });
+    const socket = require('net').connect({ port: 2087 });
     resolve({ reader: socket, writer: socket });
   });
 
@@ -15,7 +15,7 @@ function activate(context) {
 
   const client = new LanguageClient(
     'bibtexLsp',
-    'Jabref LSP Client',
+    'JabRef LSP Client',
     serverOptions,
     clientOptions
   );
