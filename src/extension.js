@@ -15,7 +15,7 @@ function activate(context) {
 
   const client = new LanguageClient(
     'bibtexLsp',
-    'Jabref LSP Client',
+    'JabRef LSP Client',
     serverOptions,
     clientOptions
   );
