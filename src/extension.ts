@@ -33,7 +33,9 @@ export function activate(context: vscode.ExtensionContext) {
 	client.setTrace(Trace.Verbose);
 	client.start();
 
-	
+	context.subscriptions.push({
+		dispose: () => { void client?.stop(); }
+	});
 }
 
 export async function deactivate(): Promise<void> {
