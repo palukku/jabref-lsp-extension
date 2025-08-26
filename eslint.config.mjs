@@ -19,7 +19,18 @@ export default [{
             selector: "import",
             format: ["camelCase", "PascalCase"],
         }],
-
+        "no-restricted-imports": [
+            "error",
+            {
+                "patterns": [
+                    {
+                        "group": ["*"],
+                        "importNames": ["*"],
+                        "message": "Star imports are not allowed. Use specific named imports instead."
+                    }
+                ]
+            }
+        ],
         curly: "warn",
         eqeqeq: "warn",
         "no-throw-literal": "warn",

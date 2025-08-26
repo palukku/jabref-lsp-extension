@@ -1,5 +1,5 @@
-import * as vscode from 'vscode';
-import * as net from 'net';
+import { ExtensionContext } from 'vscode';
+import { connect } from 'net';
 import {
 	LanguageClient,
 	LanguageClientOptions,
@@ -10,10 +10,10 @@ import {
 
 let client: LanguageClient | undefined;
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
 	const serverOptions: ServerOptions = () =>
 		new Promise<StreamInfo>((resolve) => {
-			const socket = net.connect({ port: 2087 }, () => {
+			const socket = connect({ port: 2087 }, () => {
 				resolve({ reader: socket, writer: socket });
 			});
 		});
