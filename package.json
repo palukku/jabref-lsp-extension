@@ -1,9 +1,13 @@
 {
   "name": "jabref-4-vscode",
-  "publisher": "JabRef e.V.",
+  "repository": "https://github.com/JabRef/lsp-vscode-extension",
+  "publisher": "jabref",
   "displayName": "JabRef 4 VSCode",
   "description": "Adds the ability to use the language server from JabRef inside VSCode and other JabRef features.",
   "version": "0.0.1",
+  "sponsor": {
+    "url": "https://github.com/sponsors/JabRef"
+  },
   "engines": {
     "vscode": "^1.103.0"
   },
@@ -13,7 +17,7 @@
   "activationEvents": [
     "onLanguage:bibtex"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "languages": [
       {
@@ -59,17 +63,20 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "package": "node esbuild.js --production"
   },
   "devDependencies": {
-    "@types/vscode": "^1.103.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.17.2",
+    "@types/vscode": "^1.103.0",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
-    "eslint": "^9.32.0",
-    "typescript": "^5.9.2",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.0",
+    "esbuild": "^0.25.9",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2"
   }
 }
