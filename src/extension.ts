@@ -29,7 +29,7 @@ function connectWithRetry(
 				socket.removeAllListeners('error');
 				socket.removeAllListeners('close');
 			};
-			
+
 			const restart = () => {
 				cleanup();
 				socket.destroy();
