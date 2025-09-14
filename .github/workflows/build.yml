@@ -66,7 +66,7 @@ jobs:
   pre-release:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success' && github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     steps:
       - run: npm run publish-prerelease
         env:
@@ -75,7 +75,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/') && github.event.workflow_run.conclusion == 'success' && github.event_name != 'pull_request'
+    if: startsWith(github.ref, 'refs/tags/') && github.event_name != 'pull_request'
     steps:
       - run: npm run publish
         env:
