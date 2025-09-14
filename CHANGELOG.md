@@ -2,7 +2,7 @@
 
 All notable changes to the "jabref-4-vscode" extension will be documented in this file.
 
-## [Unreleased]
+## [0.1.1] - 2025-09-14
 
 ### Fixed
 
