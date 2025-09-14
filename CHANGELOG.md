@@ -2,8 +2,15 @@
 
 All notable changes to the "jabref-4-vscode" extension will be documented in this file.
 
+## [Unreleased]
+
+### Fixed
+
+- Release workflow fixed
+
 ## [0.1.0] - 2025-09-14
 
 - Initial release
 
-[0.1.0]: https://github.com/JabRef/lsp-vscode-extension/releases/tag/v0.1.0
+[Unreleased]: https://github.com/JabRef/lsp-vscode-extension/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/JabRef/lsp-vscode-extension/releases/tag/0.1.0
