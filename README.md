@@ -4,7 +4,7 @@ JabRef 4 VSCode brings the support for using JabRefs features like integrity and
 
 ## Features
 
-You can use JabRefs integrity and consistency checks right in your VSCode environment when working with `.bib` or `.bibtex` files.
+You can use JabRef's [integrity](https://docs.jabref.org/finding-sorting-and-cleaning-entries/checkintegrity) and [consistency](https://docs.jabref.org/finding-sorting-and-cleaning-entries/checkconsistency) checks right in your VSCode environment when working with `.bib` or `.bibtex` files.
 Both options can be enabled and disabled separately in the VSCode extension settings. 
 
 ## How to test this extension
