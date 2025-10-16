@@ -15,7 +15,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:bibtex"
+    "onLanguage:bibtex",
+    "onLanguage:markdown"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -25,6 +26,12 @@
         "extensions": [
           ".bib",
           ".bibtex"
+        ]
+      },
+	  {
+        "id": "markdown",
+        "extensions": [
+          ".md"
         ]
       }
     ],
