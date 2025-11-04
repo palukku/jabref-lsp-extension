@@ -359,7 +359,7 @@ export class ServerManager {
                 };
 
                 socket.once('connect', () => {
-                    vscode.window.showInformationMessage('JabLS server connection established.');
+                    vscode.window.setStatusBarMessage('JabLS server connection established.');
                     attempt = 0;
                     cleanup();
                     resolve({
@@ -369,7 +369,7 @@ export class ServerManager {
                 });
 
                 socket.once('error', () => {
-                    vscode.window.showInformationMessage('JabLS server connection closed. Attempting to reconnect...');
+                    vscode.window.showWarningMessage('JabLS server connection closed. Attempting to reconnect...');
                     restart();
                 });
 
@@ -377,7 +377,7 @@ export class ServerManager {
                     if (hadError) {
                         return;
                     }
-                    vscode.window.showInformationMessage('JabLS server connection closed. Attempting to reconnect...');
+                    vscode.window.showWarningMessage('JabLS server connection closed. Attempting to reconnect...');
                     restart();
                 });
             };
