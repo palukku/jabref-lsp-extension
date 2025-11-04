@@ -94,7 +94,7 @@ export class ServerManager {
             return 'linux';
         }
 
-        vscode.window.showErrorMessage(`[JabLS] Unsupported platform: ${nodePlatform} / ${nodeArch}`);
+        vscode.window.showErrorMessage(`Unsupported platform for JabLs: ${nodePlatform} / ${nodeArch}`);
         throw new Error(`Unsupported platform: ${nodePlatform} / ${nodeArch}`);
     }
 
@@ -104,7 +104,7 @@ export class ServerManager {
     ): ServerArchiveInfo {
         const match = infos.find(i => i.platform === platform);
         if (!match) {
-            vscode.window.showErrorMessage(`[JabLS] No ServerArchiveInfo provided for platform "${platform}".`);
+            vscode.window.showErrorMessage(`No JabLS binaries found for platform "${platform}".`);
             throw new Error(
                 `No ServerArchiveInfo provided for platform "${platform}".`
             );
@@ -306,7 +306,7 @@ export class ServerManager {
             });
 
             this.serverProcess.once('exit', (code, signal) => {
-                vscode.window.showInformationMessage('JabLS server process has exited.');
+                vscode.window.showWarningMessage('JabLS server process has exited.');
                 console.log(
                     `[JabLS process] server exited code=${code} signal=${signal}`
                 );
