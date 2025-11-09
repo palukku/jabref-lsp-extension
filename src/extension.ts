@@ -19,7 +19,6 @@ let client: LanguageClient | undefined;
 let manager: ServerManager | undefined;
 
 export function activate(context: ExtensionContext) {
-
     const serverInfos: ServerArchiveInfo[] = [
         {
             platform: 'windows',
@@ -68,6 +67,12 @@ export function activate(context: ExtensionContext) {
             language: 'bibtex'
         }, {
             scheme: 'file',
+            language: 'latex'
+        }, {
+            scheme: 'untitled',
+            language: 'latex'
+        }, {
+            scheme: 'file',
             language: 'markdown'
         }, {
             scheme: 'untitled',
@@ -83,13 +88,13 @@ export function activate(context: ExtensionContext) {
         },
         initializationFailedHandler: () => true,
     };
+
     client = new LanguageClient(
         'jabref-4-vscode',
         'JabRef LSP Client',
         serverOptions,
         clientOptions
     );
-
     client.setTrace(Trace.Verbose);
     client.start();
 
