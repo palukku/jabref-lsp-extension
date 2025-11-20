@@ -51,7 +51,7 @@
         "configuration": {
             "title": "JabRef 4 VSCode",
             "properties": {
-                "jabref.cayw.endpoint": {
+                "jabref.CAYW.endpoint": {
                     "type": "string",
                     "default": "http://localhost:23119/better-bibtex/cayw?format=biblatex&command=autocite",
                     "description": "Endpoint to call the 'cite as you write' picker."
