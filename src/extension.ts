@@ -119,7 +119,8 @@ export async function deactivate(): Promise<void> {
 }
 
 async function callCaywHttpEndpoint(): Promise<void> {
-    const endpoint: URL | null = URL.parse(vscode.workspace.getConfiguration('jabref').get<string>('cayw.endpoint', 'http://localhost:23119/cayw'));
+    const endpoint: URL | null = URL.parse(vscode.workspace.getConfiguration('jabref').get<string>('CAYW.endpoint', 'http://localhost:23119/cayw'));
+    console.log(endpoint);
     if (!endpoint) {
         vscode.window.showErrorMessage('CAYW: invalid URL for CAYW endpoint');
         return;
